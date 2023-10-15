@@ -9,6 +9,8 @@ export const errorHandler = (err: Error, req: Request, res: Response, next: Next
     return res.status(err.statusCode).send({ errors:  err.serializeErrors() });
   }
   
+  console.log(err);
+  
   return res.status(400).send({ errors: [
     {
       message: 'something went wrong'
